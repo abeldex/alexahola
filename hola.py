@@ -112,3 +112,14 @@ class AllExceptionHandler(AbstractExceptionHandler):
         speech = "Ah caray, no lo he entendido. Puedes repetirmelo una vez más!!"
         handler_input.response_builder.speak(speech).ask(speech)
         return handler_input.response_builder.response
+
+sb.add_request_handler(LaunchRequestHandler())
+sb.add_request_handler(HelloWorldIntentHandler())
+sb.add_request_handler(HelpIntentHandler())
+sb.add_request_handler(CancelOrStopIntentHandler())
+sb.add_request_handler(FallbackIntentHandler())
+sb.add_request_handler(SessionEndedRequestHandler())
+
+sb.add_exception_handler(CatchAllExceptionHandler())
+
+handler = sb.lambda_handler()
