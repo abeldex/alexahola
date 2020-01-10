@@ -117,9 +117,6 @@ sb.add_request_handler(LaunchRequestHandler())
 sb.add_request_handler(HolaMundoIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelAndStopIntentHandler())
-sb.add_request_handler(FallbackIntentHandler())
-sb.add_request_handler(SessionEndedRequestHandler())
-
-sb.add_exception_handler(CatchAllExceptionHandler())
+sb.add_exception_handler(AllExceptionHandler())
 
 handler = sb.lambda_handler()
